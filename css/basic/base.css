@@ -20,3 +20,10 @@ h6 {
 .hidden{
     display: none;
 }
+
+img.increase,
+img.decrease {
+    width: 10px;
+    height: 10px;
+}
+

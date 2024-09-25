@@ -15,19 +15,16 @@ function renderMeme() {
 
     const image = new Image(60, 60)
     image.onload = drawMeme
-
     image.src = imgUrl
-
-    gCtx.textAlign = 'center'
-    gCtx.fillStyle = 'white'
-    gCtx.font = '20px serif'
-
 }
 
 function drawMeme() {
     gCtx.drawImage(this, 0, 0)
     const meme = getMeme()
     const lineOnTop = meme.lines[0].txt
+    // gCtx.textAlign = 'center'
+    gCtx.fillStyle = meme.lines[0].color
+    gCtx.font = `${meme.lines[0].size}px serif`
     gCtx.fillText(lineOnTop, 120, 30)
 }
 
@@ -41,3 +38,23 @@ function onDownloadImg(elLink) {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
 }
+
+function onSetFillColor(color) {
+    setColor(color)
+    renderMeme()
+}
+
+function onIncreaseFont(){
+    console.log('inc');
+    
+     increaseFont()
+    
+    renderMeme()
+}
+
+function onDecreaseFont(){
+    decreaseFont()
+    renderMeme()
+}
+
+

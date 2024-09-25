@@ -18,19 +18,19 @@
     list-style-type: none;
 }
 
-a:link {
+a.main-link:link {
     color:white;
     text-decoration: none;
     background-color: transparent;
 }
 
-a:visited {
+a.main-link:visited {
     color:white;
     text-decoration: none;
   
 }
 
-a:hover {
+a.main-link:hover {
     color: black;
     text-decoration-thickness: underline;
 }

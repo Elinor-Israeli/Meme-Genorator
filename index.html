@@ -11,40 +11,44 @@
 
 <body class="main-layout" onload="onInIt()">
 
-<header class="main-header flex space-between align-center">
-    <div class="header-logo">memegen</div>
-    <nav class="main-nav">
-        <ul class="main-nav-list clean-list flex align-center ">
-            <li><a href="#">Gallery</a></li>|
-            <li><a href="#">Memes</a></li>|
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <input class= search-bar type="text" placeholder="Enter search keyword 🔎">
-    <section class="gallery">
-    </section>
-    <section class="editor hidden">
-        <div class="canvas-container">
-            <canvas width="1450" height="1450" ></canvas>
-            <input class="line-one" oninput="onSetLineTxt()" type="text" placeholder="Enter your text">
-            <a href="#" class="btn" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
-        </div>
-    </section>
-</main>
-<footer class="main-footer">
-    <div class="footer-logo">Memegen</div>
-    <small>all rights reserved - Elinor Israeli</small>
-</footer>
+    <header class="main-header flex space-between align-center">
+        <div class="header-logo">memegen</div>
+        <nav class="main-nav">
+            <ul class="main-nav-list clean-list flex align-center ">
+                <li><a href="#" class="main-link">Gallery</a></li>|
+                <li><a href="#" class="main-link">Memes</a></li>|
+                <li><a href="#" class="main-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <input class=search-bar type="text" placeholder="Enter search keyword 🔎">
+        <section class="gallery">
+        </section>
+        <section class="editor hidden">
+            <div class="canvas-container">
+                <canvas width="1450" height="1450"></canvas>
+                <input class="line-one" oninput="onSetLineTxt()" type="text" placeholder="Enter your text">
+                <a href="#" class="btn-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
+                <button onclick="onIncreaseFont()" class="increase"><img class="increase"  src="ICONS/increase font - icon.png" alt="+"></button>
+                <button onclick="onDecreaseFont()" class="decrease"><img class="decrease"  src="ICONS/decrease font - icon.png" alt="-"></button>
+                <input type="color" class="fill-color" name="fill-color" onchange="onSetFillColor(this.value)" />
 
-<script src="js/meme.controller.js"></script>
-<script src="js/gallery.controller.js"></script>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-logo">Memegen</div>
+        <small>all rights reserved - Elinor Israeli</small>
+    </footer>
 
-<script src="js/meme.service.js"></script>
-<script src="js/gallery.services.js"></script>
+    <script src="js/meme.controller.js"></script>
+    <script src="js/gallery.controller.js"></script>
 
-<script src="js/main.js"></script>
+    <script src="js/meme.service.js"></script>
+    <script src="js/gallery.services.js"></script>
+
+    <script src="js/main.js"></script>
 
 
 </body>
