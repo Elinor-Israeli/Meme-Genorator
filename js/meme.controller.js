@@ -9,18 +9,18 @@ function onInIt() {
 }
 
 
-function renderMeme() {    
+function renderMeme() {
     const imgUrl = getSelectedUrl()
-    
-    const image = new Image(60, 60) 
-    image.onload =  drawMeme
+
+    const image = new Image(60, 60)
+    image.onload = drawMeme
 
     image.src = imgUrl
-  
-    gCtx.textAlign = 'center' 
+
+    gCtx.textAlign = 'center'
     gCtx.fillStyle = 'white'
     gCtx.font = '20px serif'
-   
+
 }
 
 function drawMeme() {
@@ -28,4 +28,10 @@ function drawMeme() {
     const meme = getMeme()
     const lineOnTop = meme.lines[0].txt
     gCtx.fillText(lineOnTop, 120, 30)
+}
+
+function onSetLineTxt() {
+    const elLineOne = document.querySelector('.line-one')
+    setLineTxt(elLineOne.value)
+    renderMeme()
 }

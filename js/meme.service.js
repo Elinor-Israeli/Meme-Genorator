@@ -27,3 +27,7 @@ function getSelectedUrl(){
     const selectedImgId = gImgs.find(img => img.id === gMeme.selectedImgId)
     return selectedImgId.url 
 }
+
+function setLineTxt(txt){
+    gMeme.lines[0].txt = txt
+}
