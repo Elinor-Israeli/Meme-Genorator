@@ -23,11 +23,13 @@
 </header>
 <main>
     <input class= search-bar type="text" placeholder="Enter search keyword 🔎">
-    <section class="gallery"></section>
-    <section class="editor">
+    <section class="gallery">
+    </section>
+    <section class="editor hidden">
         <div class="canvas-container">
             <canvas width="1450" height="1450" ></canvas>
             <input class="line-one" oninput="onSetLineTxt()" type="text" placeholder="Enter your text">
+          
         </div>
     </section>
 </main>
@@ -37,7 +39,11 @@
 </footer>
 
 <script src="js/meme.controller.js"></script>
+<script src="js/gallery.controller.js"></script>
+
 <script src="js/meme.service.js"></script>
+<script src="js/gallery.services.js"></script>
+
 <script src="js/main.js"></script>
 
 

@@ -16,3 +16,7 @@ h6 {
     line-height: 1.2;
     margin: 0 0 1em;
 }
+
+.hidden{
+    display: none;
+}

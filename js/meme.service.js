@@ -1,7 +1,5 @@
 'use strict'
 
-var gImgs = [{ id: 1, url: 'meme-imgs/1.jpg', keywords: [] }]
-
 var gMeme = { 
     selectedImgId: 1, 
     selectedLineIdx: 0, 
@@ -19,7 +17,7 @@ function getMeme(){
     return gMeme
 }
 
-function selectedImgId(imgId){
+function setImg(imgId){
     gMeme.selectedImgId = imgId
 }
 
