@@ -1,0 +1,36 @@
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+/*clean list*/
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a:link {
+    color:white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:visited {
+    color:white;
+    text-decoration: none;
+  
+}
+
+a:hover {
+    color: black;
+    text-decoration-thickness: underline;
+}

@@ -1,0 +1,27 @@
+.main-nav .main-nav-list {
+    gap: 10px;
+    height: 50px;
+    
+}
+
+.main-header {
+    background-color: orange;
+}
+
+/* .main-header.header-logo {
+    font-family: mont;
+    font-size: 60 px;
+
+} */
+
+.header-logo {
+    color: white;
+    font-size: x-large;
+    font-weight: 1000;
+
+}
+
+.search-bar{
+    margin-top: 10px;
+}
+

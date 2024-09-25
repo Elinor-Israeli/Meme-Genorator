@@ -1,0 +1,12 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: minmax(var(--layout-padding), 1fr) minmax(auto, var(--break-l)) minmax(var(--layout-padding), 1fr)
+}
+
+.main-layout>* {
+    grid-column: 2;
+}
+
+.canvas-container {
+    position: relative;
+}
