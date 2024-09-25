@@ -21,6 +21,12 @@ h6 {
     display: none;
 }
 
+img {
+    margin: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
 img.increase,
 img.decrease {
     width: 10px;
