@@ -9,24 +9,24 @@
     <title>Meme Generator</title>
 </head>
 
-<body onload="onInIt()">
+<body class="main-layout" onload="onInIt()">
 
-<header class="main-header">
-    <div class="header-logo">Memegen</div>
+<header class="main-header flex space-between align-center">
+    <div class="header-logo">memegen</div>
     <nav class="main-nav">
-        <ul class="main-nav-list">
+        <ul class="main-nav-list clean-list flex align-center ">
             <li><a href="#">Gallery</a></li>|
             <li><a href="#">Memes</a></li>|
             <li><a href="#">About</a></li>
         </ul>
     </nav>
-    <input type="text" placeholder="Enter search keyword 🔎">
 </header>
 <main>
+    <input class= search-bar type="text" placeholder="Enter search keyword 🔎">
     <section class="gallery"></section>
     <section class="editor"></section>
     <div class="canvas-container">
-        <canvas width="450" height="450" ></canvas>
+        <canvas width="1450" height="1450" ></canvas>
     </div>
 </main>
 <footer class="main-footer">
