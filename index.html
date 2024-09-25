@@ -9,13 +9,14 @@
     <title>Meme Generator</title>
 </head>
 
-<body>
+<body onload="onInIt()">
 
 <header class="main-header">
     <div class="header-logo">Memegen</div>
     <nav class="main-nav">
         <ul class="main-nav-list">
             <li><a href="#">Gallery</a></li>|
+            <li><a href="#">Memes</a></li>|
             <li><a href="#">About</a></li>
         </ul>
     </nav>
@@ -24,10 +25,18 @@
 <main>
     <section class="gallery"></section>
     <section class="editor"></section>
+    <div class="canvas-container">
+        <canvas width="450" height="450" ></canvas>
+    </div>
 </main>
 <footer class="main-footer">
     <div class="footer-logo">Memegen</div>
     <small>all rights reserved - Elinor Israeli</small>
 </footer>
+
+<script src="js/meme.controller.js"></script>
+<script src="js/meme.service.js"></script>
+<script src="js/main.js"></script>
+
 
 </body>
