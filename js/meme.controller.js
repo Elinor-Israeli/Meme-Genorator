@@ -173,5 +173,6 @@ function onDeleteLine() {
 
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.clientWidth / 2
+    gElCanvas.width = elContainer.clientWidth/2
+
 }

@@ -32,31 +32,33 @@
         grid-template-columns: 1fr; 
     }
     .canvas-container {
-        width: 80%; 
+        width:100%; 
         padding: 10px; 
     }
 
     canvas {
-        width: 100%; 
+        width: 50%; 
         height: auto; 
     }
     .canvas-container {
         display: flex;
         align-items: flex-start;
         position: relative;
-        align-items: start;
+        align-items: center;
 
         flex-direction: column;
     
     
         width: 100%;
-        padding: 20px;
-        margin: auto;
+        /* padding: 20px; */
+        /* margin: auto; */
         border-color:white ;
         
         
-        justify-content: center;
+        /* justify-content: center; */
      }   
+
+     
     
    
 }
