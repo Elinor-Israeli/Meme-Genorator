@@ -10,5 +10,6 @@
 
 @import url(fonts/font.css);
 @import url(setup/var.css);
+@import url(setup/mq.css)
 
 

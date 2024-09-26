@@ -1,15 +1,28 @@
-@media (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr);
+
+
+@media (max-width: 1199px) {
+    .main-layout {
+        grid-template-columns: 20px 1fr 20px 1fr;
     }
 
-    .meme-editor {
-        flex-direction: column;
-        align-items: center;
+    .main-layout > *:nth-child(4n + 1),
+    .main-layout > *:nth-child(4n + 2) {
+        grid-column: span 2; 
     }
-
-    .canvas-container,
-    .editor-controls {
-        max-width: 100%;
+    .main-layout > *:nth-child(4n + 3),
+    .main-layout > *:nth-child(4n + 4) {
+        grid-column: span 2; 
     }
 }
+
+
+@media (max-width: 767px) {
+    .main-layout {
+        grid-template-columns: 1fr; 
+    }
+
+    .main-layout > * {
+        grid-column: span 1; 
+    }
+}
+

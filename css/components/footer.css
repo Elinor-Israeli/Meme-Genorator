@@ -1,4 +1,5 @@
 .main-footer{
+    display: flex;
     gap: 10px;
     height: 50px;
     background-color: orange;

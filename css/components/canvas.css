@@ -3,13 +3,12 @@
     padding: 20px;
     margin: auto;
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
+    /* justify-content: center; */
     align-items: start;
-}
-
-.canvas-container {
     position: relative;
 }
+
 
 canvas {
     background-color: white;
