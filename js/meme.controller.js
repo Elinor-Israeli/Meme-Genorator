@@ -6,7 +6,7 @@ function onInIt() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     renderMeme()
-    renderGallery()
+    renderGallery()    
 }
 
 
@@ -26,9 +26,17 @@ function drawText(idx, line, y, x = 200) {
     gCtx.font = `${line.size}px serif`
     gCtx.fillText(line.txt, x, y)
 
+    const rectX = x-10
+    const rectY = y-20
+    const width = line.size*line.txt.length*0.5
+    const height = line.size*1.5
+
+
     if(getMeme().selectedLineIdx === idx){
-        drawRect(x, y,line.size, line.txt.length)
+        drawRect(rectX, rectY, width, height)
     }
+    setLineCoord(idx,rectX, rectY, width, height)
+    
 }
 
 function drawMeme() {
@@ -87,12 +95,12 @@ function onChangeLine(){
     renderMeme()
 }
 
-function drawRect(x, y,fontSize, textLength) {
+function drawRect(x, y, width, height) {
     gCtx.beginPath()
     gCtx.strokeStyle = 'black'
 
     gCtx.lineWidth = 3
-    gCtx.rect(x-10, y-20,fontSize*textLength*0.5, fontSize*1.5)
+    gCtx.rect(x, y, width, height)
    
     gCtx.stroke()
     

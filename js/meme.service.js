@@ -7,12 +7,24 @@ var gMeme = {
         {
             txt: 'first line',
             size: 20,
-            color: 'red'
+            color: 'red',
+            coordinates: {
+                x:0,
+                y:0,
+                width:0,
+                height:0
+            }
         },
         {
             txt: 'second line',
             size: 20,
-            color: 'red'
+            color: 'red',
+            coordinates: {
+                x:0,
+                y:0,
+                width:0,
+                height:0
+            }
         }
     ]
 }
@@ -57,12 +69,22 @@ function decreaseFont() {
 }
 
 function addLine() {
-    gMeme.lines.push( {
+    gMeme.lines.push({
         txt: 'line',
         size: 20,
-        color: 'red'}) 
+        color: 'red'
+    })
 }
 
-function changeLine(){
+function changeLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
+}
+
+function setLineCoord(idx,x,y, width,height){
+   gMeme.lines[idx].coordinates = {
+        x: x,
+        y: y,
+        width: width,
+        height: height,
+    }
 }
