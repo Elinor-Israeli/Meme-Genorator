@@ -4,7 +4,7 @@
     margin: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
 .canvas-container {
@@ -16,13 +16,23 @@ canvas {
     border: 1px solid black;
 }
 
+
+
+.controllers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+
 .line{
-    align-self:self-start;
-    margin-left: 200px;
+    margin-left: 135px;
+    margin-right: 135px;
     border-radius:30px;
     text-align: center;
     
-   width: 700px;
+   width: 375px;
    height: 50px;
+   
 }
 

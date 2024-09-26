@@ -28,8 +28,11 @@ img {
 }
 
 img.increase,
-img.decrease {
+img.decrease,
+img.add,
+img.change {
     width: 10px;
     height: 10px;
 }
+
 
