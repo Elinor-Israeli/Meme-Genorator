@@ -7,8 +7,9 @@ var gMeme = {
         {
             txt: 'first line',
             size: 20,
-            color: 'white',
+            color: '#FFFFFF',
             align : 'middle',
+            font: 'impact',
             coordinates: {
                 x:0,
                 y:0,
@@ -19,8 +20,9 @@ var gMeme = {
         {
             txt: 'second line',
             size: 20,
-            color: 'white',
+            color: '#FFFFFF',
             align : 'middle',
+            font: 'impact',
             coordinates: {
                 x:0,
                 y:0,
@@ -47,8 +49,17 @@ function getSelectedUrl() {
 
 function getSelectedText() {
     const idx = gMeme.selectedLineIdx
-    console.log("idx", idx);
     return gMeme.lines[idx].txt
+}
+
+function getSelectedFont() {
+    const idx = gMeme.selectedLineIdx
+    return gMeme.lines[idx].font
+}
+
+function getSelectedColor() {
+    const idx = gMeme.selectedLineIdx
+    return gMeme.lines[idx].color
 }
 
 function setLineTxt(txt) {
@@ -75,7 +86,7 @@ function addLine() {
     gMeme.lines.push({
         txt: 'line',
         size: 20,
-        color: 'white',
+        color: '#FFFFFF',
         align: 'middle'
     })
 }
@@ -121,4 +132,9 @@ function deleteLine(){
     if((idx === gMeme.lines.length) && (gMeme.lines.length != 0)){
         gMeme.selectedLineIdx = gMeme.lines.length - 1
     }
+}
+
+function setFont(font){
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].font = font
 }

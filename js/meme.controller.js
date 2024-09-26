@@ -9,6 +9,11 @@ var rightX = 500
 function onInIt() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
+
+    document.querySelector('.font-family').addEventListener('change', (event) => {
+        setFont(event.target.value)
+        renderMeme()
+    });
     gElCanvas.addEventListener('click', function (ev) {
         const idx = selectClickedLine(ev.offsetX, ev.offsetY);
         if (idx != -1) {
@@ -30,8 +35,16 @@ function renderMeme() {
     image.src = imgUrl
     if(getMeme().lines.length > 0){
         const txt = getSelectedText()
-        const elInput = document.querySelector('.line')
-        elInput.value = txt
+        const elLine = document.querySelector('.line')
+        elLine.value = txt
+
+        const font = getSelectedFont()
+        const elFont = document.querySelector('.font-family')
+        elFont.value = font
+
+        const color = getSelectedColor()
+        const elColor = document.querySelector('.fill-color')
+        elColor.value = color
     }
    
 }
@@ -43,7 +56,7 @@ function drawText(idx, line, y) {
 
     gCtx.fillStyle = line.color
     gCtx.strokeStyle = 'black'
-    gCtx.font = `${line.size}px impact`
+    gCtx.font = `${line.size}px ${line.font}`
     gCtx.fillText(line.txt, x, y)
 
     const rectX = x - 10
