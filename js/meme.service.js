@@ -7,7 +7,8 @@ var gMeme = {
         {
             txt: 'first line',
             size: 20,
-            color: 'red',
+            color: 'white',
+            align : 'middle',
             coordinates: {
                 x:0,
                 y:0,
@@ -18,7 +19,8 @@ var gMeme = {
         {
             txt: 'second line',
             size: 20,
-            color: 'red',
+            color: 'white',
+            align : 'middle',
             coordinates: {
                 x:0,
                 y:0,
@@ -45,6 +47,7 @@ function getSelectedUrl() {
 
 function getSelectedText() {
     const idx = gMeme.selectedLineIdx
+    console.log("idx", idx);
     return gMeme.lines[idx].txt
 }
 
@@ -72,7 +75,8 @@ function addLine() {
     gMeme.lines.push({
         txt: 'line',
         size: 20,
-        color: 'red'
+        color: 'white',
+        align: 'middle'
     })
 }
 
@@ -104,4 +108,17 @@ function selectClickedLine(clickedX,clickedY){
          }
     }
     return -1
+}
+
+function setAlign(align) {
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].align = align
+}
+
+function deleteLine(){
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines.splice(idx, 1)
+    if((idx === gMeme.lines.length) && (gMeme.lines.length != 0)){
+        gMeme.selectedLineIdx = gMeme.lines.length - 1
+    }
 }

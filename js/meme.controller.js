@@ -2,17 +2,21 @@
 var gElCanvas
 var gCtx
 
+var leftX = 10
+var middleX = 200
+var rightX = 500
+
 function onInIt() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    gElCanvas.addEventListener('click', function(ev) {
+    gElCanvas.addEventListener('click', function (ev) {
         const idx = selectClickedLine(ev.offsetX, ev.offsetY);
         if (idx != -1) {
             setSelectedLineIdx(idx)
         }
         renderMeme()
     }, false);
-    
+
     renderMeme()
     renderGallery()
 }
@@ -24,27 +28,31 @@ function renderMeme() {
     const image = new Image(60, 60)
     image.onload = drawMeme
     image.src = imgUrl
-   const txt = getSelectedText()
-   const elInput = document.querySelector('.line')
-   elInput.value = txt  
+    if(getMeme().lines.length > 0){
+        const txt = getSelectedText()
+        const elInput = document.querySelector('.line')
+        elInput.value = txt
+    }
+   
 }
 
-function drawText(idx, line, y, x = 200) {
+function drawText(idx, line, y) {
+    const width = line.size * line.txt.length * 0.5
+    const height = line.size * 1.5
+    const x = calX(line.align, width)
+
     gCtx.fillStyle = line.color
-    gCtx.font = `${line.size}px mont`
+    gCtx.strokeStyle = 'black'
+    gCtx.font = `${line.size}px impact`
     gCtx.fillText(line.txt, x, y)
 
-    const rectX = x-10
-    const rectY = y-20
-    const width = line.size*line.txt.length*0.5
-    const height = line.size*1.5
+    const rectX = x - 10
+    const rectY = y - 20
 
-
-    if(getMeme().selectedLineIdx === idx){
+    if (getMeme().selectedLineIdx === idx) {
         drawRect(rectX, rectY, width, height)
     }
-    setLineCoord(idx,rectX, rectY, width, height)
-    
+    setLineCoord(idx, rectX, rectY, width, height)
 }
 
 function drawMeme() {
@@ -55,14 +63,19 @@ function drawMeme() {
     const bottomLineY = 490
 
     // gCtx.textAlign = 'center'
-    drawText(0,meme.lines[0], topLineY)
-    drawText(meme.lines.length-1,meme.lines[meme.lines.length-1], bottomLineY)
+    if (meme.lines.length > 0) {
+        drawText(0, meme.lines[0], topLineY)
+        if (meme.lines.length > 1) {
+            drawText(meme.lines.length - 1, meme.lines[meme.lines.length - 1], bottomLineY)
+        }
+    }
 
-    if(meme.lines.length > 2){
-       const gapLine = (bottomLineY - topLineY) / (meme.lines.length - 1)
-        for(let i=1;i < meme.lines.length-1; i++){
-          const positionLine =  topLineY + gapLine*i
-          drawText(i, meme.lines[i] , positionLine)
+
+    if (meme.lines.length > 2) {
+        const gapLine = (bottomLineY - topLineY) / (meme.lines.length - 1)
+        for (let i = 1; i < meme.lines.length - 1; i++) {
+            const positionLine = topLineY + gapLine * i
+            drawText(i, meme.lines[i], positionLine)
         }
     }
 }
@@ -93,12 +106,12 @@ function onDecreaseFont() {
     renderMeme()
 }
 
-function onAddLine(){
+function onAddLine() {
     addLine()
     renderMeme()
 }
 
-function onChangeLine(){
+function onChangeLine() {
     changeLine()
     renderMeme()
 }
@@ -109,7 +122,33 @@ function drawRect(x, y, width, height) {
 
     gCtx.lineWidth = 3
     gCtx.rect(x, y, width, height)
-   
+
     gCtx.stroke()
-    
+
+}
+
+function calX(align, width) {
+    let x
+    switch (align) {
+        case 'right':
+            x = rightX - width
+            break
+        case 'middle':
+            x = middleX
+            break
+        case 'left':
+            x = leftX
+            break
+    }
+    return x
+}
+
+function onSetAlign(align) {
+    setAlign(align)
+    renderMeme()
+}
+
+function onDeleteLine() {
+    deleteLine()
+    renderMeme()
 }

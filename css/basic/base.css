@@ -30,7 +30,11 @@ img {
 img.increase,
 img.decrease,
 img.add,
-img.change {
+img.change,
+img.trash,
+img.left,
+img.right,
+img.middle {
     width: 10px;
     height: 10px;
 }
