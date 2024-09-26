@@ -109,11 +109,8 @@ function setLineCoord(idx,x,y, width,height){
 }
 
 function selectClickedLine(clickedX,clickedY){
-    console.log(clickedX,clickedY);
-    
     for (let i=0; i< gMeme.lines.length; i++) {
         const coordinates = gMeme.lines[i].coordinates
-        console.log(i, coordinates)
         if((clickedX >= coordinates.x) &&( clickedX <= coordinates.x+coordinates.width) && (clickedY >= coordinates.y) && ( clickedY <= coordinates.y+coordinates.height) ){
             return i
          }

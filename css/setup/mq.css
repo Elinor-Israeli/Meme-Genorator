@@ -13,6 +13,17 @@
     .main-layout > *:nth-child(4n + 4) {
         grid-column: span 2; 
     }
+    .main-layout > * {
+        grid-column: span 1; 
+    }
+    
+    .canvas-container {
+        width: 90%; 
+        padding: 5px; 
+    }
+
+   
+
 }
 
 
@@ -20,9 +31,15 @@
     .main-layout {
         grid-template-columns: 1fr; 
     }
-
-    .main-layout > * {
-        grid-column: span 1; 
+    .canvas-container {
+        width: 80%; 
+        padding: 10px; 
     }
+
+    canvas {
+        width: 100%; 
+        height: auto; 
+    }
+   
 }
 

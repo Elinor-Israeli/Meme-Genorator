@@ -1,13 +1,17 @@
 .canvas-container {
-    width: 100px;
-    padding: 20px;
-    margin: auto;
     display: flex;
     align-items: flex-start;
-    /* justify-content: center; */
-    align-items: start;
     position: relative;
-}
+    align-items: start;
+
+
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    
+    
+    justify-content: center;
+ }   
 
 
 canvas {
