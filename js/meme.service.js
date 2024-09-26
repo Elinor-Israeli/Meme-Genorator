@@ -80,6 +80,10 @@ function changeLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
 }
 
+function setSelectedLineIdx(idx) {
+    gMeme.selectedLineIdx = idx
+}
+
 function setLineCoord(idx,x,y, width,height){
    gMeme.lines[idx].coordinates = {
         x: x,
@@ -87,4 +91,17 @@ function setLineCoord(idx,x,y, width,height){
         width: width,
         height: height,
     }
+}
+
+function selectClickedLine(clickedX,clickedY){
+    console.log(clickedX,clickedY);
+    
+    for (let i=0; i< gMeme.lines.length; i++) {
+        const coordinates = gMeme.lines[i].coordinates
+        console.log(i, coordinates)
+        if((clickedX >= coordinates.x) &&( clickedX <= coordinates.x+coordinates.width) && (clickedY >= coordinates.y) && ( clickedY <= coordinates.y+coordinates.height) ){
+            return i
+         }
+    }
+    return -1
 }

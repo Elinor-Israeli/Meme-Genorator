@@ -5,8 +5,16 @@ var gCtx
 function onInIt() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
+    gElCanvas.addEventListener('click', function(ev) {
+        const idx = selectClickedLine(ev.offsetX, ev.offsetY);
+        if (idx != -1) {
+            setSelectedLineIdx(idx)
+        }
+        renderMeme()
+    }, false);
+    
     renderMeme()
-    renderGallery()    
+    renderGallery()
 }
 
 
@@ -23,7 +31,7 @@ function renderMeme() {
 
 function drawText(idx, line, y, x = 200) {
     gCtx.fillStyle = line.color
-    gCtx.font = `${line.size}px serif`
+    gCtx.font = `${line.size}px mont`
     gCtx.fillText(line.txt, x, y)
 
     const rectX = x-10
@@ -105,4 +113,3 @@ function drawRect(x, y, width, height) {
     gCtx.stroke()
     
 }
-
