@@ -18,14 +18,30 @@ function renderMeme() {
     image.src = imgUrl
 }
 
+function drawText(line, y, x = 200) {
+    gCtx.fillStyle = line.color
+    gCtx.font = `${line.size}px serif`
+    gCtx.fillText(line.txt, x, y)
+}
+
 function drawMeme() {
     gCtx.drawImage(this, 0, 0)
     const meme = getMeme()
-    const lineOnTop = meme.lines[0].txt
+
+    const topLineY = 30
+    const bottomLineY = 490
+
     // gCtx.textAlign = 'center'
-    gCtx.fillStyle = meme.lines[0].color
-    gCtx.font = `${meme.lines[0].size}px serif`
-    gCtx.fillText(lineOnTop, 120, 30)
+    drawText(meme.lines[0], topLineY)
+    drawText(meme.lines[meme.lines.length-1], bottomLineY)
+
+    if(meme.lines.length > 2){
+       const gapLine = (bottomLineY - topLineY) / (meme.lines.length - 1)
+        for(let i=1;i < meme.lines.length-1; i++){
+          const positionLine =  topLineY + gapLine*i
+          drawText(meme.lines[i] , positionLine)
+        }
+    }
 }
 
 function onSetLineTxt() {
@@ -44,16 +60,18 @@ function onSetFillColor(color) {
     renderMeme()
 }
 
-function onIncreaseFont(){
-    console.log('inc');
-    
-     increaseFont()
-    
+function onIncreaseFont() {
+    increaseFont()
     renderMeme()
 }
 
-function onDecreaseFont(){
+function onDecreaseFont() {
     decreaseFont()
+    renderMeme()
+}
+
+function onAddLine(){
+    addLine()
     renderMeme()
 }
 

@@ -5,7 +5,12 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I sometimes eat Falafel',
+            txt: 'first line',
+            size: 20,
+            color: 'red'
+        },
+        {
+            txt: 'second line',
             size: 20,
             color: 'red'
         }
@@ -40,4 +45,11 @@ function increaseFont() {
 
 function decreaseFont() {
     gMeme.lines[0].size -= 5
+}
+
+function addLine() {
+    gMeme.lines.push( {
+        txt: 'line',
+        size: 20,
+        color: 'red'}) 
 }
