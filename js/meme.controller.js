@@ -33,8 +33,8 @@ function onInIt() {
 
 function renderMeme() {
     const imgUrl = getSelectedUrl()
-
-    const image = new Image(gElCanvas.width, gElCanvas.height)
+    
+    const image = new Image(60,60)
     image.onload = drawMeme
     image.src = imgUrl
     if(getMeme().lines.length > 0){
@@ -73,7 +73,6 @@ function drawText(idx, line, y) {
 }
 
 function drawMeme() {
-    resizeCanvas()
     gCtx.drawImage(this, 0, 0)
     const meme = getMeme()
 
@@ -168,10 +167,4 @@ function onSetAlign(align) {
 function onDeleteLine() {
     deleteLine()
     renderMeme()
-}
-
-function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.clientWidth/2
-
 }
