@@ -135,3 +135,4 @@ function setFont(font){
     const idx = gMeme.selectedLineIdx
     gMeme.lines[idx].font = font
 }
+
