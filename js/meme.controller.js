@@ -80,7 +80,6 @@ function drawMeme() {
     const topLineY = 30
     const bottomLineY = 490
 
-    // gCtx.textAlign = 'center'
     if (meme.lines.length > 0) {
         drawText(0, meme.lines[0], topLineY)
         if (meme.lines.length > 1) {
