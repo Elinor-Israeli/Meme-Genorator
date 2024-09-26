@@ -28,12 +28,13 @@
         <section class="editor hidden">
             <div class="canvas-container">
                 <canvas width="500" height="500"></canvas>
-                <input class="line-one" oninput="onSetLineTxt()" type="text" placeholder="Enter your text">
+                <input class="line" oninput="onSetLineTxt()" type="text" placeholder="Enter your text">
                 <a href="#" class="btn-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
                 <button onclick="onIncreaseFont()" class="increase"><img class="increase"  src="ICONS/increase font - icon.png" alt="A+"></button>
                 <button onclick="onDecreaseFont()" class="decrease"><img class="decrease"  src="ICONS/decrease font - icon.png" alt="A-"></button>
                 <input type="color" class="fill-color" name="fill-color" onchange="onSetFillColor(this.value)" />
                 <button  onclick="onAddLine()"class="add-line"><img class="add"  src="ICONS/add.png" alt="+"></button>
+                <button  onclick="onChangeLine()"class="change-line"><img class="change"  src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="⬆⬇"></button>
             </div>
         </section>
     </main>

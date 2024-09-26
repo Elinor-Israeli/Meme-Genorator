@@ -45,8 +45,8 @@ function drawMeme() {
 }
 
 function onSetLineTxt() {
-    const elLineOne = document.querySelector('.line-one')
-    setLineTxt(elLineOne.value)
+    const elLine = document.querySelector('.line')
+    setLineTxt(elLine.value)
     renderMeme()
 }
 
@@ -72,6 +72,11 @@ function onDecreaseFont() {
 
 function onAddLine(){
     addLine()
+    renderMeme()
+}
+
+function onChangeLine(){
+    changeLine()
     renderMeme()
 }
 

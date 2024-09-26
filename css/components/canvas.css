@@ -16,7 +16,7 @@ canvas {
     border: 1px solid black;
 }
 
-.line-one{
+.line{
     align-self:self-start;
     margin-left: 200px;
     border-radius:30px;

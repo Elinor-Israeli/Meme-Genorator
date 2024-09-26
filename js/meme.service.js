@@ -32,7 +32,8 @@ function getSelectedUrl() {
 }
 
 function setLineTxt(txt) {
-    gMeme.lines[0].txt = txt
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].txt = txt
 }
 
 function setColor(color) {
@@ -52,4 +53,8 @@ function addLine() {
         txt: 'line',
         size: 20,
         color: 'red'}) 
+}
+
+function changeLine(){
+    gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
 }
