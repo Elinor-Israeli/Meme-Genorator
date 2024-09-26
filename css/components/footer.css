@@ -1,21 +1,11 @@
-.main-nav .main-nav-list {
+.main-footer{
     gap: 10px;
     height: 50px;
-    
-}
-
-.main-header {
     background-color: orange;
 }
 
-.header-logo {
+.footer-logo {
     color: white;
     font-size: x-large;
     font-weight: 1000;
-
 }
-
-.search-bar{
-    margin-top: 10px;
-}
-

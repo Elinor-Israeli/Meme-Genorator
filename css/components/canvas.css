@@ -1,0 +1,28 @@
+.canvas-container {
+    width: 100px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-container {
+    position: relative;
+}
+
+canvas {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.line-one{
+    align-self:self-start;
+    margin-left: 200px;
+    border-radius:30px;
+    text-align: center;
+    
+   width: 700px;
+   height: 50px;
+}
+

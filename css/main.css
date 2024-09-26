@@ -1,6 +1,14 @@
 @import url(basic/base.css);
 @import url(basic/helpers.css);
+@import url(basic/layouts.css);
+
+
 @import url(components/main.nav.css);
+@import url(components/canvas.css);
+@import url(components/footer.css);
+
+
 @import url(fonts/font.css);
 @import url(setup/var.css);
-@import url(basic/layouts.css);
+
+

@@ -22,23 +22,22 @@
         </nav>
     </header>
     <main>
-        <input class=search-bar type="text" placeholder="Enter search keyword 🔎">
+        <input class="search-bar" type="text" placeholder="Enter search keyword 🔎">
         <section class="gallery main-layout">
         </section>
         <section class="editor hidden">
             <div class="canvas-container">
-                <canvas width="1450" height="1450"></canvas>
+                <canvas width="500" height="500"></canvas>
                 <input class="line-one" oninput="onSetLineTxt()" type="text" placeholder="Enter your text">
                 <a href="#" class="btn-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
                 <button onclick="onIncreaseFont()" class="increase"><img class="increase"  src="ICONS/increase font - icon.png" alt="+"></button>
                 <button onclick="onDecreaseFont()" class="decrease"><img class="decrease"  src="ICONS/decrease font - icon.png" alt="-"></button>
                 <input type="color" class="fill-color" name="fill-color" onchange="onSetFillColor(this.value)" />
-
             </div>
         </section>
     </main>
-    <footer class="main-footer">
-        <div class="footer-logo">Memegen</div>
+    <footer class="main-footer flex space-between align-center">
+        <div class="footer-logo align-center">memegen</div>
         <small>all rights reserved - Elinor Israeli</small>
     </footer>
 
