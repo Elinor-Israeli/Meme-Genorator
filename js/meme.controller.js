@@ -16,12 +16,19 @@ function renderMeme() {
     const image = new Image(60, 60)
     image.onload = drawMeme
     image.src = imgUrl
+   const txt = getSelectedText()
+   const elInput = document.querySelector('.line')
+   elInput.value = txt  
 }
 
-function drawText(line, y, x = 200) {
+function drawText(idx, line, y, x = 200) {
     gCtx.fillStyle = line.color
     gCtx.font = `${line.size}px serif`
     gCtx.fillText(line.txt, x, y)
+
+    if(getMeme().selectedLineIdx === idx){
+        drawRect(x, y,line.size, line.txt.length)
+    }
 }
 
 function drawMeme() {
@@ -32,14 +39,14 @@ function drawMeme() {
     const bottomLineY = 490
 
     // gCtx.textAlign = 'center'
-    drawText(meme.lines[0], topLineY)
-    drawText(meme.lines[meme.lines.length-1], bottomLineY)
+    drawText(0,meme.lines[0], topLineY)
+    drawText(meme.lines.length-1,meme.lines[meme.lines.length-1], bottomLineY)
 
     if(meme.lines.length > 2){
        const gapLine = (bottomLineY - topLineY) / (meme.lines.length - 1)
         for(let i=1;i < meme.lines.length-1; i++){
           const positionLine =  topLineY + gapLine*i
-          drawText(meme.lines[i] , positionLine)
+          drawText(i, meme.lines[i] , positionLine)
         }
     }
 }
@@ -80,4 +87,14 @@ function onChangeLine(){
     renderMeme()
 }
 
+function drawRect(x, y,fontSize, textLength) {
+    gCtx.beginPath()
+    gCtx.strokeStyle = 'black'
+
+    gCtx.lineWidth = 3
+    gCtx.rect(x-10, y-20,fontSize*textLength*0.5, fontSize*1.5)
+   
+    gCtx.stroke()
+    
+}
 

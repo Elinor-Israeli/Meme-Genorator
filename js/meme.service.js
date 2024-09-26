@@ -31,21 +31,29 @@ function getSelectedUrl() {
     return selectedImgId.url
 }
 
+function getSelectedText() {
+    const idx = gMeme.selectedLineIdx
+    return gMeme.lines[idx].txt
+}
+
 function setLineTxt(txt) {
     const idx = gMeme.selectedLineIdx
     gMeme.lines[idx].txt = txt
 }
 
 function setColor(color) {
-    gMeme.lines[0].color = color
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].color = color
 }
 
 function increaseFont() {
-    gMeme.lines[0].size += 5
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].size += 5
 }
 
 function decreaseFont() {
-    gMeme.lines[0].size -= 5
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].size -= 5
 }
 
 function addLine() {
