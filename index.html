@@ -30,7 +30,7 @@
                 <canvas width="500" height="500"></canvas>
                 <div class="controllers space-between">
                     <input class="line" oninput="onSetLineTxt()" type="text" placeholder="Enter your text">
-                    <div class="top-controllers">
+                    <div class="top-controllers">                            
                         <button onclick="onChangeLine()" class="change-line"><img class="change"
                                 src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="⬆⬇"></button>
                         <button onclick="onAddLine()" class="add-line"><img class="add" src="ICONS/add.png"
@@ -56,6 +56,7 @@
                             <option value="mont">Mont</option>
                         </select>        
                     <input type="color" class="fill-color" onchange="onSetFillColor(this.value)" />
+                    
                     </div>
                     
                     <a href="#"  class="btn-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
