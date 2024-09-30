@@ -1,11 +1,11 @@
-.main-footer{
-    padding: 20px;
+.main-footer {
+    padding: 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
- background-color: orange;
+    background-color: orange;
 
 }
 
@@ -14,3 +14,25 @@
     font-size: x-large;
     font-weight: 1000;
 }
+
+.btn-download {
+    background-color: orange;
+    border-radius: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.font-family{
+    background-color: orange;
+    border-radius: 20px;
+    padding: 10px;
+    font-size:medium;
+    border-color: orange;
+}
+
+.fill-color{
+    background-color: orange;
+    border-radius: 5px;
+
+}
+

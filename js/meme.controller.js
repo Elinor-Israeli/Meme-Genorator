@@ -25,7 +25,7 @@ function onInIt() {
     renderMeme()
     renderGallery()
 
-    window.addEventListener('resize', function() {        
+    window.addEventListener('resize', function () {
         renderMeme()
     })
 }
@@ -33,11 +33,11 @@ function onInIt() {
 
 function renderMeme() {
     const imgUrl = getSelectedUrl()
-    
-    const image = new Image(60,60)
+
+    const image = new Image(60, 60)
     image.onload = drawMeme
     image.src = imgUrl
-    if(getMeme().lines.length > 0){
+    if (getMeme().lines.length > 0) {
         const txt = getSelectedText()
         const elLine = document.querySelector('.line')
         elLine.value = txt
@@ -50,7 +50,7 @@ function renderMeme() {
         const elColor = document.querySelector('.fill-color')
         elColor.value = color
     }
-   
+
 }
 
 function drawText(idx, line, y) {
@@ -60,8 +60,12 @@ function drawText(idx, line, y) {
 
     gCtx.fillStyle = line.color
     gCtx.strokeStyle = 'black'
+    gCtx.lineWidth = 2
     gCtx.font = `${line.size}px ${line.font}`
     gCtx.fillText(line.txt, x, y)
+    gCtx.strokeText(line.txt, x, y)
+
+
 
     const rectX = x - 10
     const rectY = y - 20
@@ -70,6 +74,8 @@ function drawText(idx, line, y) {
         drawRect(rectX, rectY, width, height)
     }
     setLineCoord(idx, rectX, rectY, width, height)
+
+    
 }
 
 function drawMeme() {
@@ -168,3 +174,21 @@ function onDeleteLine() {
     deleteLine()
     renderMeme()
 }
+
+function onMoveLineUp() {
+
+    moveLineUp()
+    renderMeme()
+   
+}
+
+function onMoveLineDown() {
+    console.log('down');
+    
+    moveLineDown()
+    renderMeme()
+}
+
+
+
+
